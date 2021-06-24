@@ -1,6 +1,8 @@
 <template>
-  <div>Labels.vue
-    <Nav/>
+  <div>
+    <Layout>
+      <p>你好1</p>
+    </Layout>
   </div>
 </template>
 
@@ -11,6 +13,3 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-
-</style>
