@@ -56,6 +56,7 @@ export default {
       padding: 0 16px;
       margin-right: 12px;
       margin-top: 4px;
+      list-style: none;
     }
   }
 
