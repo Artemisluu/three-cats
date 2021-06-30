@@ -1,76 +1,76 @@
 <template>
   <div class="tags">
-    <div class="new">
-      <button>新增标签</button>
+    <div class="icon-list">
+      <div v-for="item in items" :key="item" class="icon-list-item">
+        <Icon :name="item"/>
+        {{ item }}
+      </div>
     </div>
-    <ul class="current">
-      <li>衣</li>
-      <li>食</li>
-      <li>住</li>
-      <li>行</li>
-      <li>衣</li>
-      <li>食</li>
-      <li>住</li>
-      <li>行</li>
-      <li>衣</li>
-      <li>食</li>
-      <li>住</li>
-      <li>行</li>
-      <li>衣</li>
-      <li>食</li>
-      <li>住</li>
-      <li>行</li>
-      <li>衣</li>
-      <li>食</li>
-      <li>住</li>
-      <li>行</li>
-    </ul>
   </div>
 
 </template>
 
 <script lang="ts">
+
 export default {
-  name: 'Tags'
+  name: 'Tags',
+  data() {
+    return {
+      items: [
+        '保险',
+        '医疗',
+        '宠物',
+        '家居',
+        '家电',
+        '服装',
+        '机票',
+        '游戏',
+        '生鲜',
+        '电影',
+        '维修',
+        '美妆',
+        '美食',
+        '酒店',
+      ]
+    };
+  }
 };
 </script>
 
 <style lang="scss" scoped>
-.tags {
-  font-size: 14px;
-  padding: 16px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column-reverse;
 
-  > .current {
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+  padding: 25px;
+
+  .icon-list {
+    font-size: 14px;
+    flex-grow: 1;
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     flex-wrap: wrap;
 
-    > li {
-      background: #d9d9d9;
-      $h: 24px;
-      height: $h;
-      line-height: $h;
-      border-radius: $h/2;
-      padding: 0 16px;
-      margin-right: 12px;
-      margin-top: 4px;
-      list-style: none;
+
+    .icon-list-item {
+      width: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+
+      .icon {
+        width: 36px;
+        height: 36px;
+      }
     }
+
+
   }
 
-  > .new {
-    padding-top: 16px;
-
-    button {
-      background: transparent;
-      border: none;
-      color: #999;
-      border-bottom: 1px solid;
-      padding: 0 4px;
-    }
-  }
 }
+
 
 </style>
