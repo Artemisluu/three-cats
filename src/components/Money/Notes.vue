@@ -2,8 +2,8 @@
   <div>
     <label class="notes">
       <span class="name">备注</span>
-      <input type="text" :value="value"
-             @input="onInput"
+      <input type="text"
+             v-model="value"
              placeholder="在这里输入备注">
     </label>
   </div>
@@ -16,16 +16,11 @@ import {Component} from 'vue-property-decorator';
 @Component
 export default class Notes extends Vue {
   value = '';
-
-  onInput(event: KeyboardEvent) {
-    const input = event.target as HTMLButtonElement;
-    this.value = input.value;
-  }
-
 }
 </script>
 
 <style lang="scss" scoped>
+@import "src/assets/style/reset";
 .notes {
   font-size: 14px;
   background: #f5f5f5;
@@ -43,7 +38,6 @@ export default class Notes extends Vue {
     background: transparent;
     border: none;
     padding-right: 16px;
-    outline-style: none;
   }
 }
 </style>
