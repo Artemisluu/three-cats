@@ -5,7 +5,8 @@
 </template>
 
 <script lang="ts">
-let importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
+
+let importAll = (requireContext: ReturnType<typeof require.context>) => requireContext.keys().forEach(requireContext);
 importAll(require.context('../assets/icons', true, /\.svg$/));
 
 export default {
@@ -16,10 +17,7 @@ export default {
 
 <style lang="scss" scoped>
 .icon {
-  width: 1em;
-  height: 1em;
   vertical-align: -0.15em;
-  fill: currentColor;
-  overflow: hidden;
+  fill: black;
 }
 </style>
